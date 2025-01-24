@@ -5,21 +5,29 @@ async function makeIssue() {
     const OWNER = "lSNOTNULL"; // 여러분들의 github 계정 이름
     // 요고 2
     const REPO = "happy_raccoon"; // 여러분들의 현재 리포지터리 이름
-    const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/issues`, {
-        method: 'POST',
-        headers: {
-            Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-            title: "주사위 던지기", // 요고 3
-            body: `${Math.floor(Math.random() * 200) + 100}`, // 요고 4
-        })
-    });
-    if (response.ok) {
-        console.log("성공");
-    } else {
-        console.log("실패");
+
+    try {
+        const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/issues`, {
+            method: 'POST',
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                title: "행운의 숫자",
+                body: `${Math.floor(Math.random() * 100) + 1}`,
+            })
+        });
+    
+        if (response.ok) {
+            console.log("성공");
+        } else {
+            console.log("실패");
+            const text = await response.text(); // 실패 시 응답 본문을 출력
+            console.log("응답 내용:", text);
+        }
+    } catch (error) {
+        console.error("에러 발생:", error);
     }
-}
+    
 
 makeIssue();

@@ -4,7 +4,7 @@ on:
   workflow_dispatch: # 수동으로 돌려본다
   # push, ... 여러가지 설정이 있는데...
   schedule:
-    - cron: '15 * * * *'
+    - cron: '30 * * * *'
       # https://crontab.guru/
       # 일반적으로 30분 정도 이상의 텀을 둬야함
 
