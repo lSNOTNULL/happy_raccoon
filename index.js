@@ -2,7 +2,7 @@ async function makeIssue() {
     // env.########
     const token = process.env.GH_TOKEN; // 주의! 일치해야함 (env와 일치해야함)
     // 요고 1
-    const OWNER = "qus0in"; // 여러분들의 github 계정 이름
+    const OWNER = "lSNOTNULL"; // 여러분들의 github 계정 이름
     // 요고 2
     const REPO = "happy_raccoon"; // 여러분들의 현재 리포지터리 이름
     const response = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/issues`, {
@@ -11,7 +11,7 @@ async function makeIssue() {
             Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
-            title: "오늘 먹을 칼로리", // 요고 3
+            title: "주사위 던지기", // 요고 3
             body: `${Math.floor(Math.random() * 200) + 100}`, // 요고 4
         })
     });
