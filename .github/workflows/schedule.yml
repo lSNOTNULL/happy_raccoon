@@ -25,5 +25,5 @@ jobs:
 
       - name: PAT를 활용한 index.js 실행
         env:
-          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
+          PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: node index.js
