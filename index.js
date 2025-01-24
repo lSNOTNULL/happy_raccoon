@@ -28,6 +28,6 @@ async function makeIssue() {
     } catch (error) {
         console.error("에러 발생:", error);
     }
+}
     
-
 makeIssue();
