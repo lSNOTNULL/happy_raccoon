@@ -1,6 +1,6 @@
 async function makeIssue() {
     // env.########
-    const token = process.env.GH_TOKEN; // 주의! 일치해야함 (env와 일치해야함)
+    const token = process.env.PAT_TOKEN; // 주의! 일치해야함 (env와 일치해야함)
     // 요고 1
     const OWNER = "lSNOTNULL"; // 여러분들의 github 계정 이름
     // 요고 2
@@ -13,7 +13,7 @@ async function makeIssue() {
                 Authorization: `Bearer ${token}`,
             },
             body: JSON.stringify({
-                title: "행운의 숫자",
+                title: "잔디용 숫자",
                 body: `${Math.floor(Math.random() * 100) + 1}`,
             })
         });

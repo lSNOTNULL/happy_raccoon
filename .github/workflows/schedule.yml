@@ -1,4 +1,4 @@
-name: schedule
+name: Creat Issue with PAT
 
 on:
   workflow_dispatch: # 수동으로 돌려본다
@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: index.js 실행
+      - name: PAT를 활용한 index.js 실행
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: node index.js
